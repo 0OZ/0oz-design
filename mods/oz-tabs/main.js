@@ -1,3 +1,5 @@
+// Derived from the `tabs` mod shipped with Herdr (Apache-2.0, https://github.com/herdrdev/herdr-app).
+// Modified by 0OZ: segmented tab pill, outlined Files and Changes buttons, no bar background.
 import { View, div, svg, image } from "gpui-kit";
 import { h_flex } from "gpui-base";
 import { spaces, panes, run, openOverlay, theme, window, shared, layout } from "herdr";

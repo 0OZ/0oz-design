@@ -1,3 +1,5 @@
+// Derived from the `changes` mod shipped with Herdr (Apache-2.0, https://github.com/herdrdev/herdr-app).
+// Modified by 0OZ: root no longer draws its own rounded, bordered card.
 import { View, div } from "gpui-kit";
 import { v_flex, h_flex, InputState, Input, Scrollbar, v_virtual_list } from "gpui-base";
 import { spaces, panes, focused, exec, readTextFile, watchFolder, theme, settings } from "herdr";

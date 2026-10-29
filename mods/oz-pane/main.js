@@ -1,3 +1,5 @@
+// Derived from the `pane` mod shipped with Herdr (Apache-2.0, https://github.com/herdrdev/herdr-app).
+// Modified by 0OZ: outlined folder and branch badges, no header background, focus shown by title colour.
 // A pane's header, for layouts that frame their panes:
 //   { "tab": "active", "pane": { "header": { "content": { "mod": "oz-pane" } } } }
 // Shows the program's icon (the app's program table), the agent's name or

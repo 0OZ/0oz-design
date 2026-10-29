@@ -9,7 +9,7 @@ A calm, neutral dark layout for the [Herdr](https://herdr.dev) app, in the spiri
 - Dashboard-style sidebar: a solid **New space** button, rows with initial tiles, nested worktrees, Settings and an account chip at the bottom.
 - Tabs in a segmented pill, and flat Files and Changes panels.
 
-The sidebar names in the screenshot are blurred.
+The screenshot is a demo window with fixture repos and made-up spaces.
 
 ## Install
 
@@ -30,3 +30,7 @@ herdr-app do layout.switch '{"name":"0oz-design"}'
 ## More
 
 [`RECIPE.md`](RECIPE.md) describes the layout region by region, how it behaves, and how it is built, so an agent can rebuild it from scratch.
+
+## License
+
+[Apache-2.0](LICENSE), the same as Herdr. The `oz-*` mods are modified copies of mods shipped with [Herdr](https://github.com/herdrdev/herdr-app); each file says which one and what changed.

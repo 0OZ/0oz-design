@@ -1,3 +1,5 @@
+// Derived from the `workspace-chrome` mod shipped with Herdr (Apache-2.0, https://github.com/herdrdev/herdr-app).
+// Modified by 0OZ: brand bar, solid sidebar footer with Settings, Add machine and an account chip.
 import { View, div, image, svg } from "gpui-kit";
 import { h_flex, v_flex } from "gpui-base";
 import { theme, run, props, window, shared, setShared, updates, agents, home } from "herdr";
