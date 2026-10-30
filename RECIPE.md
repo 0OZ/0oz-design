@@ -28,7 +28,7 @@ Colours (theme `0oz`): background #161616, canvas #111111, chrome #0e0e0e, surfa
 - **One terminal:** no header, border, radius or focus ring. The tab already shows its icon and name.
 - **Two or more:** every pane gets a 38px header with the agent icon, the name (foreground when the pane has the keyboard, `dim` otherwise), outlined badges for the folder and the git branch, and the status. Hovering a header shows split right, split down, zoom and close. Panes are squared off and divided by a 1px `border`-coloured line. Clicking a header focuses its pane.
 - **Tabs:** click selects, double-click renames, right-click opens the tab menu, dragging one onto another reorders, the mouse wheel steps through them, `+` opens the new-terminal menu. The Files/Changes choice is remembered per space.
-- **Sidebar:** the New space button runs `space.new`, the search buttons open the picker, the toggle collapses the sidebar to 44px (icons only).
+- **Sidebar:** the New space button opens the `oz-new-space` dialog (folder with a native Browse picker, agent, optional branch). Without a branch it runs `space.new {folder, argv}`; with one it opens the shipped `worktree` dialog, which creates the checkout and the space. The search buttons open the picker, the search buttons open the picker, the toggle collapses the sidebar to 44px (icons only).
 - Keys are untouched. Suggested additions: `ctrl-shift-5` for `pane.split:right` and `ctrl-shift-'` for `pane.split:down`.
 
 ## Built from
@@ -40,7 +40,7 @@ Colours (theme `0oz`): background #161616, canvas #111111, chrome #0e0e0e, surfa
   - `work-body` holds `main` (background `border`; content `{tab: "active", pane: {...}}`) and `panel` column 368px, hidden by default, with a `panel-body` stack of the `oz-files` and `oz-changes` blocks.
   - `main`'s pane frame: `background` background, `border` width 0, `focus` width 0, `radius` 0, `gap` 1, `lone` false, header `{content: {mod: "oz-pane"}, height: 38, position: "top", reveal: "always"}`. The 1px lines between panes and between the terminal and the panel are the `border` background of `main` and `work-body` showing through the gaps.
 - Theme `0oz` (`themes/0oz.json`): the colours above plus a 16-colour ANSI palette.
-- Mods, all clones of shipped Herdr mods: `oz-tabs` (from `tabs`), `oz-pane` (from `pane`), `oz-chrome` (from `workspace-chrome`), `oz-status` (from `workspace-status`), `oz-spaces` (from `spaces`), `oz-files` (from `files`), `oz-changes` (from `changes`). The last two differ from the shipped mods in one line each: their root no longer draws its own `rounded(10)` border and card.
+- Mods, all clones of shipped Herdr mods except `oz-new-space` (new): `oz-tabs` (from `tabs`), `oz-pane` (from `pane`), `oz-chrome` (from `workspace-chrome`), `oz-status` (from `workspace-status`), `oz-spaces` (from `spaces`), `oz-files` (from `files`), `oz-changes` (from `changes`). The last two differ from the shipped mods in one line each: their root no longer draws its own `rounded(10)` border and card.
 - Functions and commands used: `spaces`, `agents`, `panes`, `theme`, `shared`, `setShared`, `layout`, `window`, `props`, `home`, `updates`, `openOverlay`, `run` with `space.new`, `tab.*`, `pane.*`, `layout.*`, `app.settings`, `mod.open`.
 - Shipped things it relies on: mods `agents`, `new-menu`, `menu`, `picker`; assets `frame/welcome/herdr.png`, `mods/workspace-chrome/{branch,plus,search,spinner}.svg`, `mods/pane/close.svg`, `mods/files/file.svg`, `mods/changes/changes.svg`; theme `paper` for light mode.
 
@@ -57,7 +57,7 @@ Colours (theme `0oz`): background #161616, canvas #111111, chrome #0e0e0e, surfa
 
 ## Done when
 
-- `herdr-app check mods/<name>` passes for `oz-tabs`, `oz-pane`, `oz-chrome`, `oz-status`, `oz-spaces` and `oz-files` (`oz-changes` cannot be checked headlessly, the shipped `changes` panics in `check` too, so confirm it by opening the panel), and `herdr-app status` lists no errors after `layout.switch {name: "0oz-design"}`.
+- `herdr-app check mods/<name>` passes for `oz-new-space`, `oz-tabs`, `oz-pane`, `oz-chrome`, `oz-status`, `oz-spaces` and `oz-files` (`oz-changes` cannot be checked headlessly, the shipped `changes` panics in `check` too, so confirm it by opening the panel), and `herdr-app status` lists no errors after `layout.switch {name: "0oz-design"}`.
 - With one terminal, the window shows a single rounded card with no inner border and no pane header.
 - After `pane.split {direction: "right"}`, both panes have a 38px header and are separated by a 1px line, with no rounded corners and no gap.
 - The focused pane's title is #f5f5f5 and the other's is #7a7a7a.
