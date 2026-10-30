@@ -362,7 +362,7 @@ export default class Spaces extends View {
     const quick = h_flex().px(8).pt(4).pb(6).gap(6)
       .child(h_flex().id("space-quick").flex_1().h(32).gap(7).items_center().justify_center().rounded(8)
         .bg(t.solid).text_color(t.solid_foreground).font_medium().cursor_pointer()
-        .hover(s => s.bg(t.foreground)).on_click(() => run("space.new"))
+        .hover(s => s.bg(t.foreground)).on_click(() => openOverlay({ mod: "oz-new-space", kind: "dialog", width: 460, height: 340 }))
         .child(svg("mods/workspace-chrome/plus.svg").size(14).text_color(t.solid_foreground))
         .when(!collapsed, el => el.child("New space")))
       .when(!collapsed, el => el.child(div().id("space-search").size(32).flex_none().flex().items_center().justify_center().rounded(8)

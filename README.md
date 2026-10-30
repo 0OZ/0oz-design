@@ -6,7 +6,7 @@ A calm, neutral dark layout for the [Herdr](https://herdr.dev) app, in the spiri
 
 - One rounded, thinly bordered card holds the whole work area, inset into the window.
 - A single terminal sits flush in the card. Several terminals are divided by a 1px hairline, and the focused one shows in its header, not in a bright ring.
-- Dashboard-style sidebar: a solid **New space** button, rows with initial tiles, nested worktrees, Settings and an account chip at the bottom.
+- Dashboard-style sidebar: a solid **New space** button that opens a dialog to pick the folder, the agent (Terminal, Claude, Codex…) and an optional branch (created as a worktree), rows with initial tiles, nested worktrees, Settings and an account chip at the bottom.
 - Tabs in a segmented pill, and flat Files and Changes panels.
 
 The screenshot is a demo window with fixture repos and made-up spaces.
@@ -33,4 +33,4 @@ herdr-app do layout.switch '{"name":"0oz-design"}'
 
 ## License
 
-[Apache-2.0](LICENSE), the same as Herdr. The `oz-*` mods are modified copies of mods shipped with [Herdr](https://github.com/herdrdev/herdr-app); each file says which one and what changed.
+[Apache-2.0](LICENSE), the same as Herdr. The `oz-*` mods are modified copies of mods shipped with [Herdr](https://github.com/herdrdev/herdr-app); each file says which one and what changed. `oz-new-space` is new.
